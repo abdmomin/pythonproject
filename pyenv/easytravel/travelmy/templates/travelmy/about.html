@@ -1,0 +1,82 @@
+{% extends 'travelmy/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-section">
+    <div class="container text-center mt-4">
+        <p class="h3">- The Mission -</p>
+        <p class="text-secondary">
+            To provide the easiest way to navigate your desired destination in Malaysia.<br><br>
+        </p>
+    </div>
+    <hr>
+    <div class="container mt-4">
+        <p class="h3 text-center">About<br></p>
+        <p class="text-secondary">
+                On Easy Travel, I came to work every day because I wanted to develop a working website for my project. 
+                On this website you can easily find top destinations in Malaysia. You can browse the destinations from 
+                the homepage. However, if you want to view details of the destination you must login to the website. 
+                When you are logged in, you will be able to view details about the destinations. On the details page 
+                you will find the information about the city, where to visit, the map of the city and you can also 
+                find some hotels with price and a booking link.
+
+                To login to this website, you must register. Loggedin users can change their username and password from 
+                their profile. If you forget your password you can ckick on Forget Password? link and type your email, 
+                the you will receive an email with instructions to change your password.
+
+                You can also contact me through the website Contact page. If you have any question, fill up the form, 
+                click send and I will get an email.<br><br>
+        </p>
+    </div>
+    <hr>
+    <div class="container mt-4">
+        <p class="h3 text-center">About Me<br><br></p>
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <img src="{% static 'images/profile_pic.jpg' %}" class="prof_img" width="250px" height="250px" alt="...">
+            </div>
+            <div class="col-sm-6">
+                    <p class="h4">Bio</p>
+                    <p class="text-secondary">I am Abdullah Al Momin, a graduating student of BICT in Limkokwing 
+                        University of Creative Technology, Malaysia. I am a Designer, Developer and Programmer. 
+                        I developed this website for my Major Project. To develop this project, I used Python 
+                        Django framework for backend development and Postgres Database. To design the user interface I used 
+                        Bootstrap and custom HTML and CSS. I also used Gmail smpt server to send and receive email 
+                        from localhost.
+                    </p>
+            </div>
+        </div>
+        <p class="h4"><br><br>My Work</p>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card mt-2 h-100" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Designer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Front End Developer</h6>
+                        <p class="card-text">User Interface design with HTML, CSS, Sass</p>
+                    </div>
+                    </div>
+            </div>
+        <div class="col-sm-4">
+                <div class="card mt-2 h-100" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Developer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Backend Developer</h6>
+                        <p class="card-text">javaScript and PHP developer. Full stack backend developer.</p>
+                    </div>
+                    </div>
+            </div>
+        <div class="col-sm-4">
+                <div class="card mt-2 h-100" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Programmer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Python, SQL and JAVA programmer</h6>
+                        <p class="card-text">Applicatins and softwere programming with python and JAVA</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+        
+</div>
+{% endblock content %}

@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    
+    <script src="https://kit.fontawesome.com/3bd909153b.js" crossorigin="anonymous"></script>
+    
+    <style>
+      .card-img-top{
+          width: 100%!important;
+          height: 200px!important;
+          object-fit: cover;
+        }
+        .prof_img{
+          margin: auto;
+          border-radius: 50%;
+          border: #0275d8 3px solid;
+        }
+        main{
+          min-height: calc(100vh - 60px);
+        }
+    </style>
+
+    {% if title %}
+      <title>Easy Travel - {{ title }}</title>
+    {% else %}
+      <title>Easy Travel</title>
+    {% endif %}
+    
+  </head>
+  <body>
+    <div class="container">
+      <main>
+      <div
+        class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm"
+      >
+        <h5 class="my-0 mr-md-auto font-weight-normal text-white">
+          Easy Travel MY
+        </h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-white" href="/">Home</a>
+          <a class="p-2 text-white" href="{% url 'about' %}">About</a>
+          <a class="p-2 text-white" href="{% url 'contact' %}">Contact</a>
+          {% if user.is_authenticated %}
+          <a class="p-2 text-white" href="{% url 'profile' %}">Profile</a>
+          <a class="p-2 text-white" href="{% url 'logout' %}">Logout</a>
+        </nav>
+          {% else %}
+                <a class="p-2 text-white" href="{% url 'login' %}">Login</a>
+              </nav>
+            <a class="btn btn-outline-light" href="{% url 'register' %}">Register</a>
+          {% endif %}
+      </div>
+
+      {% if messages %} {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+      {% endfor %} {% endif %} {% block content %} {% endblock %}
+
+    </main>
+      <footer class="footer mt-3 py-3" style="background-color: #f5f5f5">
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-4 pt-3">
+                <p class="text-center"><span class="text-muted text-center">&copy; Abdullah Al Momin 2019</span></p>
+            </div>
+            <div class="col-4 pt-2 text-center">
+                <span class="text-muted text-center">Email: abd.almomin@gmail.com</span><br>
+                <span class="text-muted text-center">Phone: +60173643445</span>
+            </div>
+            <div class="col-4 pt-3 text-center">
+                <a href="#"><i class="fab fa-facebook-square fa-2x px-2"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x px-2"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x px-2"></i></a>
+                <a href="#"><i class="fab fa-google-plus-square fa-2x px-2"></i></a>
+                <a href="#"><i class="fab fa-github-square fa-2x px-2"></i></a>
+            </div>
+          </div>
+          
+        </div>
+      </footer>
+        
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

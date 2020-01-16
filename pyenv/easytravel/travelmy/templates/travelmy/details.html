@@ -1,0 +1,125 @@
+{% extends 'travelmy/layout.html' %}
+{% block content %}
+
+
+
+<div class="container mt-3">
+ 
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4">
+            <p class="text-secondary float-right">
+                logged in as:<br> 
+                <small class="text-muted">
+                    {{ user.username }}
+                </small>
+            </p>
+        </div>
+    </div>
+      
+        <p class="h2">{{ dests.name }}</p>
+        <small class="text-muted">{{ dests.sub_text }}</small><br><br>
+        <p class="load">{{ dests.detail_desc }}</p><br><br>
+
+        <p class="h4">Things to do</p>
+    <div class="row mb-3">
+        
+    <div class="col-sm-3">
+        <div class="card mt-2 h-100" style="width: 18rem;">
+                <img src="{{ dests.todo_img1.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ dests.todo_title1 }}</h5>
+                <p class="card-text">{{ dests.todo_desc1 }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="card mt-2 h-100" style="width: 18rem;">
+                <img src="{{ dests.todo_img2.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ dests.todo_title2 }}</h5>
+                <p class="card-text">{{ dests.todo_desc2 }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="card mt-2 h-100" style="width: 18rem;">
+                <img src="{{ dests.todo_img3.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ dests.todo_title3 }}</h5>
+                <p class="card-text">{{ dests.todo_desc3 }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="card mt-2 h-100" style="width: 18rem;">
+                <img src="{{ dests.todo_img4.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ dests.todo_title4 }}</h5>
+                <p class="card-text">{{ dests.todo_desc4 }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <p class="h4"><br><br>Location</p>
+    
+          <div class="embed-responsive embed-responsive-21by9">
+                <iframe class="embed-responsive-item" src="{{ dests.dest_map }}"></iframe>
+              </div>
+    
+</div>
+
+<p class="h4"><br><br>Hotels in {{ dests.name }}</p>
+<div class="row">
+    <div class="col-sm-4">
+
+            <div class="card mb-3 h-100" style="width: 18rem;">
+                    <img src="{{ dests.hotel_img1.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ dests.hotel_name1 }}</h5>
+                      <h5><span class="badge badge-info">RM {{ dests.hotel_price1 }}</span></h5>
+                      <a href="{{ dests.hotel_url1 }}" class="btn btn-success w-100">Book Now</a>
+                    </div>
+                  </div>
+                </div>
+            <div class="col-sm-4">
+            <div class="card mb-3 h-100" style="width: 18rem;">
+                <img src="{{ dests.hotel_img2.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ dests.hotel_name2 }}</h5>
+                    <h5><span class="badge badge-info">RM {{ dests.hotel_price2 }}</span></h5>
+                    <a href="{{ dests.hotel_url2 }}" class="btn btn-success w-100">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+            <div class="card mb-3 h-100" style="width: 18rem;">
+                <img src="{{ dests.hotel_img3.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ dests.hotel_name3 }}</h5>
+                    <h5><span class="badge badge-info">RM {{ dests.hotel_price3 }}</span></h5>
+                    <a href="{{ dests.hotel_url3 }}" class="btn btn-success w-100">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+
+</div>
+
+<div class="container mt-3">
+    <p class="h4"><br><br>When to visit</p>
+    <p class="load">{{ dests.when_to_visit }}</p><br><br>
+</div>
+        
+         
+          
+       
+</div>
+{% endblock content %}
